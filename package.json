@@ -39,5 +39,9 @@
       "react/react-in-jsx-scope": "off",
       "no-unused-vars": "warn"
     }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/facucarrion/ts-todo-app.git"
   }
 }
