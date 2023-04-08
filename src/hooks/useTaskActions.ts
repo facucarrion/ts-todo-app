@@ -1,23 +1,9 @@
-import { SetStateAction, useContext, useState } from 'react'
+import { useContext, useState } from 'react'
 import { TasksContext } from '../context/TasksContext'
 import { Task } from '../types/TaskTypes'
+import { TaskActions } from '../types/TaskActionsTypes'
 
-interface UseTaskActions {
-  checked: boolean
-  edit: boolean
-  inputValue: string
-  setInputValue: React.Dispatch<SetStateAction<string>>
-  handle: {
-    check: () => void
-    delete: (event: React.MouseEvent<HTMLButtonElement>) => void
-    edit: {
-      change: (event: React.MouseEvent<HTMLButtonElement>) => void
-      confirm: (newBody: string) => void
-    }
-  }
-}
-
-const useTaskActions = ({ id, body, completed }: Task): UseTaskActions => {
+const useTaskActions = ({ id, body, completed }: Task): TaskActions => {
   const { tasks, setTasks } = useContext(TasksContext)
 
   const [checked, setChecked] = useState<boolean>(completed)
